@@ -1,0 +1,253 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load static %}
+<body >
+    <section class="header">
+      <div class="banner">
+        <section class="home">
+     <div class="slider">
+        <div class="slide active" style="background-image: url('/static/images/img3.jpg')">
+            <div class="container">
+                <div class="caption">
+                    <h1>Every Goal Begins <br> As a <br > Dream</h1>
+                     <a href="" ><button class="btn">Shop Now</button></a>
+                </div>
+            </div>
+        </div>
+        <div class="slide" style="background-image: url('/static/images/img1.jpg')">
+            <div class="container">
+                <div class="caption">
+                  <h1>Breaking Your Limits</h1>
+                    <a href="" ><button class="btn">Shop Now</button></a>
+                </div>
+            </div>
+        </div>
+        <div class="slide" style="background-image: url('/static/images/img2.jpg')">
+            <div class="container">
+                <div class="caption">
+                  <h1>Train How You Want</h1>
+                    <a href="" ><button class="btn">Shop Now</button></a>
+                </div>
+            </div>
+        </div>
+     </div>
+   
+    <!-- controls  -->
+    <div class="controls">
+        <div class="prev">&#10094;</div>
+        <div class="next">&#10095;</div>
+    </div>
+
+    <!-- indicators -->
+    <div class="indicator">
+    </div>
+
+  </section>
+
+    <!-- ----Welcome Tag------ -->
+
+    <section class="welcome">
+      <h1>Welcome To Gym Khana</h1>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit,incididunt ut
+        labore et dolore magna aliqua.
+      </p>
+
+      <!-- --------Category------- -->
+
+      <section class="category">
+        <div class="row">
+          <div class="category-col">
+            <img src="/static/images/dumbell.jpg" />
+            <div class="layer">
+              <h3>Dumbell</h3>
+            </div>
+          </div>
+
+          <div class="category-col">
+            <img src="/static/images/equipment2.jpg" />
+            <div class="layer">
+              <h3>Equipment</h3>
+            </div>
+          </div>
+
+          <div class="category-col">
+            <img src="/static/images/fitness1.jpg " />
+            <div class="layer">
+              <h3>Fitness</h3>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="row">
+        <div class="course-col">
+          <i class="fa fa-truck fa-2x"></i>
+          <h3>Fast Internation & National Delivery</h3>
+        </div>
+
+        <div class="course-col">
+          <i class="fa fa-shield fa-2x"></i>
+          <h3>Secure Checkout Our Partners</h3>
+        </div>
+
+        <div class="course-col">
+          <i class="fa fa-handshake-o fa-2x"></i>
+          <h3>Fast & Free Customer Support</h3>
+        </div>
+      </div>
+    </section>
+
+<!-- --------Featured Products---------- -->
+
+<section class="featured">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6" >
+        <h2>FEATURED PRODUCTS</h2>
+      </div>
+      <div id="news-slider" class="owl-carousel">
+        <!-- item 1 -->
+        <div class="product">
+          <div class="product-image"> <a href="" class="image"> <img src="/static/images/featureddumbell2.jpg" class="pic-1"> <img src="/static/images/featuredumbell.png" class="pic-2"> </a> <a href="" class="cart">Add to Cart</a>
+            <ul class="links">
+              <li><a href=""><i class="fa fa-search" aria-hidden="true"></i> </a></li>
+              <li><a href=""><i class="fa fa-shopping-cart" aria-hidden="true"></i> </a></li>
+            </ul>
+          </div>
+          <div class="content"> <span class="category"></span>
+            <h3 class="title"><a href="">Dumbell</a></h3>
+            <div class="price"><span>Rs.2,200.00</span>Rs.1,200.00</div>
+          </div>
+        </div>
+        <!-- item 2 -->
+        <div class="product">
+          <div class="product-image"> <a href="" class="image"> <img src="/static/images/abdominalbench.png" class="pic-1"> <img src="/static/images/abdominalbench2.jpg" class="pic-2"> </a> <a href="" class="cart">Add to Cart</a>
+            <ul class="links">
+              <li><a href=""><i class="fa fa-search" aria-hidden="true"></i> </a></li>
+              <li><a href=""><i class="fa fa-shopping-cart" aria-hidden="true"></i> </a></li>
+            </ul>
+          </div>
+          <div class="content"> <span class="category"></span>
+            <h3 class="title"><a href="">Abdominal Bench</a></h3>
+            <div class="price"><span>Rs.2,200.00</span>Rs.1,200.00</div>
+          </div>
+        </div>
+        <!-- item 3 -->
+        <div class="product">
+          <div class="product-image"> <a href="" class="image"> <img src="/static/images/pushupbar.jpg" class="pic-1"> <img src="/static/images/pushupbar2.jpg" class="pic-2"> </a> <a href="" class="cart">Add to Cart</a>
+            <ul class="links">
+              <li><a href=""><i class="fa fa-search" aria-hidden="true"></i> </a></li>
+              <li><a href=""><i class="fa fa-shopping-cart" aria-hidden="true"></i> </a></li>
+            </ul>
+          </div>
+          <div class="content"> <span class="category"></span>
+            <h3 class="title"><a href="">Push Bar</a></h3>
+            <div class="price"><span>Rs.2,200.00</span>Rs.1,200.00</div>
+          </div>
+        </div>
+        <!-- item 4 -->
+        <div class="product">
+          <div class="product-image"> <a href="" class="image"> <img src="/static/images/cablecross.jpg" class="pic-1"> <img src="/static/images/cablecross2.png" class="pic-2"> </a> <a href="" class="cart">Add to Cart</a>
+            <ul class="links">
+              <li><a href=""><i class="fa fa-search" aria-hidden="true"></i> </a></li>
+              <li><a href=""><i class="fa fa-shopping-cart" aria-hidden="true"></i> </a></li>
+            </ul>
+          </div>
+          <div class="content"> <span class="category"></span>
+            <h3 class="title"><a href="">Cable Cross</a></h3>
+            <div class="price"><span>Rs.2,200.00</span>Rs.1,200.00</div>
+          </div>
+        </div>
+        <!-- item 5-->
+        <div class="product">
+          <div class="product-image"> <a href="" class="image"> <img src="/static/images/treadmill.png"pic-1> <img src="/static/images/treadmill1.png" class="pic-2"> </a> <a href="" class="cart">Add to Cart</a>
+            <ul class="links">
+              <li><a href=""><i class="fa fa-search" aria-hidden="true"></i> </a></li>
+              <li><a href=""><i class="fa fa-shopping-cart" aria-hidden="true"></i> </a></li>
+            </ul>
+          </div>
+          <div class="content"> <span class="category"></span>
+            <h3 class="title"><a href="">Treadmill</a></h3>
+            <div class="price"><span>Rs.2,200.00</span>Rs.1,200.00</div>
+          </div>
+        </div>
+        <!-- item 6 -->
+        <div class="product">
+          <div class="product-image"> <a href="" class="image"> <img src="/static/images/bench.png" class="pic-1"> <img src="/static/images/bench2.png" class="pic-2"> </a> <a href="" class="cart">Add to Cart</a>
+            <ul class="links">
+              <li><a href=""><i class="fa fa-search" aria-hidden="true"></i> </a></li>
+              <li><a href=""><i class="fa fa-shopping-cart" aria-hidden="true"></i> </a></li>
+            </ul>
+          </div>
+          <div class="content"> <span class="category"></span>
+            <h3 class="title"><a href="">Bench</a></h3>
+            <div class="price"><span>Rs.2,200.00</span>Rs.1,200.00</div>
+          </div>
+        </div>
+        <!-- item 7 -->
+        <div class="product">
+          <div class="product-image"> <a href="" class="image"> <img src="/static/images/machine.jpg" class="pic-1"> <img src="/static/images/machine2.jpg" class="pic-2"> </a> <a href="" class="cart">Add to Cart</a>
+            <ul class="links">
+              <li><a href=""><i class="fa fa-search" aria-hidden="true"></i> </a></li>
+              <li><a href=""><i class="fa fa-shopping-cart" aria-hidden="true"></i> </a></li>
+            </ul>
+          </div>
+          <div class="content"> <span class="category"></span>
+            <h3 class="title"><a href="">Machine</a></h3>
+            <div class="price"><span>Rs.2,200.00</span>Rs.1,200.00</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+<!-- Featured Products end-->
+
+</section>
+
+<!-- ---------Blog-------- -->
+
+<section class="blog">
+  <h1>From Our Blog</h1>
+
+  <div class="row">
+      <div class="blog-col">
+          <img src="/static/images/blogimg1.jpg" alt="">
+          
+          <div class="post-content">
+              <h3>How To Exercise Effectively</h3>
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, 
+              molestias? Sequi inventore explicabo animi quam ullam eius corporis 
+              dolorem incidunt, pariatur voluptas excepturi voluptatibus? </p>
+          </div>
+      </div>
+
+      <div class="blog-col">
+          <img src="/static/images/blogimg2.jpg" alt="">
+          <div class="post-content">
+              <h3>How To Know Enough Or Not?</h3>
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, 
+              molestias? Sequi inventore explicabo animi quam ullam eius corporis 
+              dolorem incidunt, pariatur voluptas excepturi voluptatibus? </p>
+          </div>
+      </div>
+
+      <div class="blog-col">
+          <img src="/static/images/blogimg3.jpg" alt="">
+          <div class="post-content">
+              <h3>Diet When Exercising Weight Loss</h3>
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, 
+              molestias? Sequi inventore explicabo animi quam ullam eius corporis 
+              dolorem incidunt, pariatur voluptas excepturi voluptatibus? </p>
+          </div>
+      </div>
+  </div>
+</section>
+
+
+{% endblock %}
+
+
