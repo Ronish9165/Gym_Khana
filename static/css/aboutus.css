@@ -25,17 +25,19 @@
 .about .left h1{
    text-align:center;
    color:#333;
-   margin:0 0 10px 0;
+   margin:0 0 10px -350px;
 }
 .about .left .about-line{
-   width:10%;
+   width:15%;
    border-top:2px solid #000;
    border-bottom:none;
+   margin-left: 60px;
 }
 .about .left p{
    font-size:1rem;
    margin:40px auto;
-   width:80%
+   width:80%;
+   margin:0 0 10px -250px;
 }
 
 /* 

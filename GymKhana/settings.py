@@ -141,4 +141,4 @@ EMAIL_USE_TLS = True
 
 EMAIL_HOST_USER = 'sthronesh11@@gmail.com'
 
-EMAIL_HOST_PASSWORD = 'lztxusjqrpotltps'
+EMAIL_HOST_PASSWORD = 'yedtwrhyzoeowrpu'

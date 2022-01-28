@@ -6,7 +6,16 @@
 <div class="container">
 
     <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">                       
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+            {% if message_name %}
+                <section>
+                <h2 style="text-align: center;">Thanks {{ message_name}}!</h2>
+
+                <p style="text-align: center;">
+                    we received your email and will respond shortly...</p>
+                </section>
+
+            {% else %}
           <h2 class="form-title">Contact Us</h2>
         </div>
     </div>
@@ -14,22 +23,21 @@
     <div class="row">
 
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-
-            <form id="contact-form" name="myForm" class="form" action="#" onsubmit="return validateForm()" method="POST" role="form">
-
+            <form id="contact-form" name="myForm" class="form" onsubmit="return validateForm()"  method="POST"  role="form" enctype="multipart/form-data" action="{% url 'contact' %}">
+                {% csrf_token %}
                 <div class="form-group">
                     <label class="form-label" id="nameLabel" for="name"></label>
-                    <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" tabindex="1">
+                    <input type="text" class="form-control" id="name" name="message_name" placeholder="Your Name" tabindex="1">
                 </div>
 
                 <div class="form-group">
                     <label class="form-label" id="emailLabel" for="email"></label>
-                    <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" tabindex="2">
+                    <input type="email" class="form-control" id="email" name="message_email" placeholder="Your Email" tabindex="2">
                 </div>
 
                 <div class="form-group">
                     <label class="form-label" id="subjectLabel" for="sublect"></label>
-                    <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" tabindex="3">
+                    <input type="text" class="form-control" id="subject" name="message_subject" placeholder="Subject" tabindex="3">
                 </div>
 
                 <div class="form-group">
@@ -48,5 +56,7 @@
     </div><!-- End row -->
     
   </div><!-- End container -->
+
+{% endif %}
 
 {% endblock %} 
