@@ -46,6 +46,7 @@
 
 .nav-item a{
     color: white;
+	padding-top: 20px;
 }
 
 .nav-link::after{

@@ -28,24 +28,26 @@
                  padding-top: 1px;">Contact Us</a>
             </li>
         </ul>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a href="#"><i class="fa fa-shopping-cart fa-2x" style="color: white "></i></a>
+            </li>
+        </ul>
         {% if request.user.is_authenticated %}
         <li class="nav-item">
-            <a href="#" class="fas fa-shopping-cart"></a>
+            <a href="javascript:{document.getElementById('logout').submit()}" class="nav-item"><i class="fa fa-sign-out"></i>Logout</a>
+
+            <form id="logout" action="{% url 'logout' %}" method="POST">
+
+            {% csrf_token %}
+
+            <input type="hidden">
+
+            </form>
         </li>
-
-         <a href="javascript:{document.getElementById('logout').submit()}" class="sign-out"><i class="fa fa-sign-out"></i>Logout</a>
-
-        <form id="logout" action="{% url 'logout' %}" method="POST">
-
-          {% csrf_token %}
-
-          <input type="hidden">
-
-        </form>
-
         {% else %}
         <li class="nav-item">
-            <a class="login-link" href="login" ><i
+            <a class="nav-item" href="login" ><i
             class="fa fa-user fa-2x" style="color: white"></i></a>
         </li>
         {% endif %}

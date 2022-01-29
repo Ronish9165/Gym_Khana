@@ -9,10 +9,21 @@
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
             {% if message_name %}
                 <section>
-                <h2 style="text-align: center;">Thanks {{ message_name}}!</h2>
+                    <div class="jumbotron text-center" style="margin-top: 90px;">
+                        <h2 class="display-3">Thank You! {{ message_name}}</h2>
+                        <p class="lead"><strong>Please check your email</strong> for further instructions on how to complete your account setup.</p>
+                        <hr>
+                        <p>
+                          Having trouble? <a href="{% url 'contact' %}" style="color: black">Contact us</a>
+                        </p>
+                        <p class="lead">
+                          <a class="btn btn-mod btn-border btn-large" href="{% url 'home' %}" role="button">Continue to homepage</a>
+                        </p>
+                      </div>
+                {% comment %} <h2 style="text-align: center;">Thanks {{ message_name}}!</h2>
 
                 <p style="text-align: center;">
-                    we received your email and will respond shortly...</p>
+                    we received your email and will respond shortly...</p> {% endcomment %}
                 </section>
 
             {% else %}
