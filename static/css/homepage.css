@@ -64,6 +64,30 @@
     width: 100%;
 }
 
+.dropdown{
+	margin-top: 15px;
+	margin-right: 50px;
+}
+
+.dropdown .dropdown-menu{
+	height: 150px;
+	background-color: black;
+	margin-top: 10px;
+}
+
+.dropdown .dropdown-item{
+	font-family: 'cairo',sans-serif;
+	color: gray;
+	padding-top: 15px;
+	font-size: 17px;
+	letter-spacing: 2px;
+}
+
+.dropdown .dropdown-item:hover{
+	background-color: black;
+	color: white;
+}
+
 .home{
 	height: 100vh;
 	overflow:hidden;

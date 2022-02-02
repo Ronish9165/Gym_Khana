@@ -3,6 +3,7 @@ from django.contrib import messages
 from django.contrib.auth import  authenticate
 from django.contrib.auth.models import auth, User
 from django.core.mail import send_mail
+from django.shortcuts import get_object_or_404
 
 # Create your views here.
 
@@ -51,6 +52,18 @@ def register(request):
 
 def about(request):
     return render(request, 'pages/aboutus.html')
+
+def blog(request):
+    return render(request, 'pages/blog.html')
+
+def blog_detail(request, id):
+    single_blog = get_object_or_404(pk=id)
+
+    data = {
+        'single_blog': single_blog,
+    }
+
+    return render(request, 'pages/blog_detail.html', data)
 
 def contact(request):
 
