@@ -10,12 +10,17 @@ urlpatterns = [
     path("register/", views.register, name='register'),
     path('contact', views.contact, name='contact'),
     path('about', views.about, name='about'),
-    path('blog', views.blog, name='blog'),
+    path('form', views.blogform, name="form"),
+    path('blog', views.showblog, name='blog'),
     path('blog-detail', views.blog_detail, name='blog_detail'),
     path('logout', views.logout, name="logout"),
     path('adminlogin',LoginView.as_view(template_name='admin/adminlogin.html'), name="adminlogin"),
+    path('profile', views.profile, name='profile'),
+    path('admindashboard', views.admin_dashboard_view, name='admindashboard'),
     # path("homepage/",views.homepage, name='homepage'),
+    path('cart', views.cart_view,name='cart'),
 
+    
     path('password_reset/',
          auth_views.PasswordResetView.as_view(
              template_name='password_reset_form.html'),
@@ -35,4 +40,7 @@ urlpatterns = [
          auth_views.PasswordResetCompleteView.as_view(
              template_name='password_reset_complete.html'),
          name='password_reset_complete'),
+
+     # User Related Views
+    path('edit-profile', views.edit_profile_view,name='edit-profile'),
 ]

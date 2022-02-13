@@ -10,12 +10,12 @@ body {
     background-image: linear-gradient(rgba(85, 87, 102, 0.185), rgba(85, 87, 102, 0.185)),url(/static/images/img1.jpg);
     background-position: center;
     background-size: cover;
-    display: flex;
+    /* display: flex; */
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: -20px 0 50px;
+    margin: -20px 0 0;
 	margin-top: 150px;
 }
 
@@ -36,7 +36,7 @@ span {
     font-size: 12px;
 }
 
-a {
+.forgot-pw {
     color: #333;
     font-size: 14px;
     text-decoration: none;
@@ -212,8 +212,7 @@ button.ghost:hover{
 }
 
  .footer {
-	margin-top: 25px;
-	text-align: center;
+	margin-top: 100px;
 }
 
 

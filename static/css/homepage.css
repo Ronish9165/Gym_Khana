@@ -46,7 +46,7 @@
 
 .nav-item a{
     color: white;
-	padding-top: 20px;
+	/* padding-top: 20px; */
 }
 
 .nav-link::after{
@@ -129,13 +129,16 @@
 }
 .home .caption{
 	width:50%;
-    margin-top: 450px;
-    margin-left: -200px;
+    margin-top: 400px;
+    
 }
+
 .home .caption h1{
 	font-size:62px;
+	font-weight: 700;
 	color:white;
 	margin:0;
+	text-align: center;
 	
 }
 .home .slide.active .caption h1{
@@ -143,16 +146,7 @@
 	animation: captionText .5s ease forwards;
 	animation-delay:1s;
 }
-.home .caption p{
-	font-size: 18px;
-	margin:15px 0 30px;
-	color:#222222;
-}
-.home .slide.active .caption p{
-	opacity:0;
-	animation: captionText .5s ease forwards;
-	animation-delay:1.2s;
-}
+
 .home .caption a{
  display: inline-block;
  padding:10px 30px;
@@ -280,7 +274,7 @@
     padding: 12px 20px;
     min-width: 200px;
     margin: 10px;
-    margin-left: -25px;
+    margin-left: -15px;
     font-size: 20px;
     font-weight:700;
     letter-spacing: 2px;
@@ -678,14 +672,15 @@ a {
     padding: 0;
 }
 
-.blog-col h3{
+.blog-col h3 a{
+	color: #000;
     margin-top: 16px;
     margin-bottom: 15px;
     text-align: left;
     cursor: pointer;
 }
 
-.blog-col h3:hover{
+.blog-col a:hover{
     color: orangered;
 }
 

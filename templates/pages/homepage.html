@@ -85,7 +85,7 @@
       <div class="row">
         <div class="course-col">
           <i class="fa fa-truck fa-2x"></i>
-          <h3>Fast Internation & National Delivery</h3>
+          <h3>Fast International & National Delivery</h3>
         </div>
 
         <div class="course-col">
@@ -111,7 +111,7 @@
       <div id="news-slider" class="owl-carousel">
         <!-- item 1 -->
         <div class="product">
-          <div class="product-image"> <a href="" class="image"> <img src="/static/images/featureddumbell2.jpg" class="pic-1"> <img src="/static/images/featuredumbell.png" class="pic-2"> </a> <a href="" class="cart">Add to Cart</a>
+          <div class="product-image"> <a href="" class="image"> <img src="/static/images/featureddumbell2.jpg" class="pic-1"> <img src="/static/images/featuredumbell.png" class="pic-2"> </a> <a href="{% url 'product' %}" class="cart">Buy Now</a>
             <ul class="links">
               <li><a href=""><i class="fa fa-search" aria-hidden="true"></i> </a></li>
               <li><a href=""><i class="fa fa-shopping-cart" aria-hidden="true"></i> </a></li>
@@ -124,7 +124,7 @@
         </div>
         <!-- item 2 -->
         <div class="product">
-          <div class="product-image"> <a href="" class="image"> <img src="/static/images/abdominalbench.png" class="pic-1"> <img src="/static/images/abdominalbench2.jpg" class="pic-2"> </a> <a href="" class="cart">Add to Cart</a>
+          <div class="product-image"> <a href="" class="image"> <img src="/static/images/abdominalbench.png" class="pic-1"> <img src="/static/images/abdominalbench2.jpg" class="pic-2"> </a> <a href="{% url 'product' %}" class="cart">Buy Now</a>
             <ul class="links">
               <li><a href=""><i class="fa fa-search" aria-hidden="true"></i> </a></li>
               <li><a href=""><i class="fa fa-shopping-cart" aria-hidden="true"></i> </a></li>
@@ -137,7 +137,7 @@
         </div>
         <!-- item 3 -->
         <div class="product">
-          <div class="product-image"> <a href="" class="image"> <img src="/static/images/pushupbar.jpg" class="pic-1"> <img src="/static/images/pushupbar2.jpg" class="pic-2"> </a> <a href="" class="cart">Add to Cart</a>
+          <div class="product-image"> <a href="" class="image"> <img src="/static/images/pushupbar.jpg" class="pic-1"> <img src="/static/images/pushupbar2.jpg" class="pic-2"> </a> <a href="{% url 'product' %}" class="cart">Buy Now</a>
             <ul class="links">
               <li><a href=""><i class="fa fa-search" aria-hidden="true"></i> </a></li>
               <li><a href=""><i class="fa fa-shopping-cart" aria-hidden="true"></i> </a></li>
@@ -150,7 +150,7 @@
         </div>
         <!-- item 4 -->
         <div class="product">
-          <div class="product-image"> <a href="" class="image"> <img src="/static/images/cablecross.jpg" class="pic-1"> <img src="/static/images/cablecross2.png" class="pic-2"> </a> <a href="" class="cart">Add to Cart</a>
+          <div class="product-image"> <a href="" class="image"> <img src="/static/images/cablecross.jpg" class="pic-1"> <img src="/static/images/cablecross2.png" class="pic-2"> </a> <a href="{% url 'product' %}" class="cart">Buy Now</a>
             <ul class="links">
               <li><a href=""><i class="fa fa-search" aria-hidden="true"></i> </a></li>
               <li><a href=""><i class="fa fa-shopping-cart" aria-hidden="true"></i> </a></li>
@@ -163,7 +163,7 @@
         </div>
         <!-- item 5-->
         <div class="product">
-          <div class="product-image"> <a href="" class="image"> <img src="/static/images/treadmill.png"pic-1> <img src="/static/images/treadmill1.png" class="pic-2"> </a> <a href="" class="cart">Add to Cart</a>
+          <div class="product-image"> <a href="" class="image"> <img src="/static/images/treadmill.png"pic-1> <img src="/static/images/treadmill1.png" class="pic-2"> </a> <a href="{% url 'product' %}" class="cart">Buy Now</a>
             <ul class="links">
               <li><a href=""><i class="fa fa-search" aria-hidden="true"></i> </a></li>
               <li><a href=""><i class="fa fa-shopping-cart" aria-hidden="true"></i> </a></li>
@@ -176,7 +176,7 @@
         </div>
         <!-- item 6 -->
         <div class="product">
-          <div class="product-image"> <a href="" class="image"> <img src="/static/images/bench.png" class="pic-1"> <img src="/static/images/bench2.png" class="pic-2"> </a> <a href="" class="cart">Add to Cart</a>
+          <div class="product-image"> <a href="" class="image"> <img src="/static/images/bench.png" class="pic-1"> <img src="/static/images/bench2.png" class="pic-2"> </a> <a href="{% url 'product' %}" class="cart">Buy Now</a>
             <ul class="links">
               <li><a href=""><i class="fa fa-search" aria-hidden="true"></i> </a></li>
               <li><a href=""><i class="fa fa-shopping-cart" aria-hidden="true"></i> </a></li>
@@ -189,7 +189,7 @@
         </div>
         <!-- item 7 -->
         <div class="product">
-          <div class="product-image"> <a href="" class="image"> <img src="/static/images/machine.jpg" class="pic-1"> <img src="/static/images/machine2.jpg" class="pic-2"> </a> <a href="" class="cart">Add to Cart</a>
+          <div class="product-image"> <a href="" class="image"> <img src="/static/images/machine.jpg" class="pic-1"> <img src="/static/images/machine2.jpg" class="pic-2"> </a> <a href="{% url 'product' %}" class="cart">Buy Now</a>
             <ul class="links">
               <li><a href=""><i class="fa fa-search" aria-hidden="true"></i> </a></li>
               <li><a href=""><i class="fa fa-shopping-cart" aria-hidden="true"></i> </a></li>
@@ -215,10 +215,10 @@
 
   <div class="row">
       <div class="blog-col">
-          <img src="/static/images/blogimg1.jpg" alt="">
+          <a href="{% url 'blog' %}"><img src="/static/images/blogimg1.jpg" alt="img" ></a>
           
           <div class="post-content">
-              <h3>How To Exercise Effectively</h3>
+              <h3><a href="{% url 'blog' %}">How To Exercise Effectively</a></h3>
               <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, 
               molestias? Sequi inventore explicabo animi quam ullam eius corporis 
               dolorem incidunt, pariatur voluptas excepturi voluptatibus? </p>
@@ -226,9 +226,9 @@
       </div>
 
       <div class="blog-col">
-          <img src="/static/images/blogimg2.jpg" alt="">
+        <a href="{% url 'blog' %}"><img src="/static/images/blogimg2.jpg" alt=""></a>
           <div class="post-content">
-              <h3>How To Know Enough Or Not?</h3>
+              <h3><a href="{% url 'blog' %}">How To Know Enough Or Not?</h3></a>
               <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, 
               molestias? Sequi inventore explicabo animi quam ullam eius corporis 
               dolorem incidunt, pariatur voluptas excepturi voluptatibus? </p>
@@ -236,9 +236,9 @@
       </div>
 
       <div class="blog-col">
-          <img src="/static/images/blogimg3.jpg" alt="">
+        <a href="{% url 'blog' %}"><img src="/static/images/blogimg3.jpg" alt=""></a>
           <div class="post-content">
-              <h3>Diet When Exercising Weight Loss</h3>
+              <h3><a href="{% url 'blog' %}">Diet When Exercising Weight Loss</h3></a>
               <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, 
               molestias? Sequi inventore explicabo animi quam ullam eius corporis 
               dolorem incidunt, pariatur voluptas excepturi voluptatibus? </p>
@@ -246,7 +246,6 @@
       </div>
   </div>
 </section>
-
 
 {% endblock %}
 

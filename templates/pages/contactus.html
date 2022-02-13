@@ -1,73 +1,148 @@
-{% extends 'base.html' %}
-
-{% block content %}
-
-{% load static %}
+{% extends 'base.html' %} {% block content %} {% load static %}
 <div class="container">
+  <div id="shopify-section-contact-template" class="shopify-section">
+    <div class="wrap-bread-crumb breadcrumb_collection2">
+      <div
+        class="bg-breadcrumb"
+        style="
+          background-image: url(/static/images/cta.jpg);
+          width: 180.7%;
+          margin-right: 500px;
+          margin-left: -500;
+        "
+      >
+        <div class="container container-v2">
+          <div class="title-page">
+            <h2 class="title-1">Contact us</h2>
+          </div>
+          <!-- /snippets/breadcrumb.liquid -->
 
-    <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
-            {% if message_name %}
-                <section>
-                    <div class="jumbotron text-center" style="margin-top: 90px;">
-                        <h2 class="display-3">Thank You! {{ message_name}}</h2>
-                        <p class="lead"><strong>Please check your email</strong> for further instructions on how to complete your account setup.</p>
-                        <hr>
-                        <p>
-                          Having trouble? <a href="{% url 'contact' %}" style="color: black">Contact us</a>
-                        </p>
-                        <p class="lead">
-                          <a class="btn btn-mod btn-border btn-large" href="{% url 'home' %}" role="button">Continue to homepage</a>
-                        </p>
-                      </div>
-                {% comment %} <h2 style="text-align: center;">Thanks {{ message_name}}!</h2>
-
-                <p style="text-align: center;">
-                    we received your email and will respond shortly...</p> {% endcomment %}
-                </section>
-
-            {% else %}
-          <h2 class="form-title">Contact Us</h2>
+          <div class="bread-crumb">
+            <a href="/" title="Back to the frontpage">Home </a>
+            <strong>| Contact us</strong>
+          </div>
         </div>
+      </div>
     </div>
 
     <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        {% if message_name %}
+        <section>
+          <div class="jumbotron" style="margin-top: 90px">
+            <h2 class="display-3">Thank You! {{ message_name}}</h2>
+            <p class="lead">
+              <strong>Please check your email</strong> for further instructions
+              on how to complete your account setup.
+            </p>
+            <hr />
+            <p>
+              Having trouble?
+              <a href="{% url 'contact' %}" style="color: black">Contact us</a>
+            </p>
+            <p class="lead">
+              <a
+                class="btn btn-mod btn-border btn-large"
+                href="{% url 'home' %}"
+                role="button"
+                >Continue to homepage</a
+              >
+            </p>
+          </div>
+          {% comment %}
+          <h2 style="text-align: center">Thanks {{ message_name}}!</h2>
 
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <form id="contact-form" name="myForm" class="form" onsubmit="return validateForm()"  method="POST"  role="form" enctype="multipart/form-data" action="{% url 'contact' %}">
-                {% csrf_token %}
-                <div class="form-group">
-                    <label class="form-label" id="nameLabel" for="name"></label>
-                    <input type="text" class="form-control" id="name" name="message_name" placeholder="Your Name" tabindex="1">
-                </div>
+          <p style="text-align: center">
+            we received your email and will respond shortly...
+          </p>
+          {% endcomment %}
+        </section>
 
-                <div class="form-group">
-                    <label class="form-label" id="emailLabel" for="email"></label>
-                    <input type="email" class="form-control" id="email" name="message_email" placeholder="Your Email" tabindex="2">
-                </div>
+        {% else %}
+        <!-- <h2 class="form-title">Contact Us</h2> -->
+      </div>
+    </div>
 
-                <div class="form-group">
-                    <label class="form-label" id="subjectLabel" for="sublect"></label>
-                    <input type="text" class="form-control" id="subject" name="message_subject" placeholder="Subject" tabindex="3">
-                </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <form
+          id="contact-form"
+          name="myForm"
+          class="form"
+          onsubmit="return validateForm()"
+          method="POST"
+          role="form"
+          enctype="multipart/form-data"
+          action="{% url 'contact' %}"
+        >
+          {% csrf_token %}
+          <div class="form-group">
+            <label class="form-label" id="nameLabel" for="name"></label>
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              name="message_name"
+              placeholder="Your Name"
+              tabindex="1"
+              style="height: 70px; color: white"
+            />
+          </div>
 
-                <div class="form-group">
-                    <label class="form-label" id="messageLabel" for="message"></label>
-                    <textarea rows="6" cols="60" name="message" class="form-control" id="message" placeholder="Your message" tabindex="4"></textarea>                                 
-                </div>
+          <div class="form-group">
+            <label class="form-label" id="emailLabel" for="email"></label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              name="message_email"
+              placeholder="Your Email"
+              tabindex="2"
+              style="height: 70px; color: white"
+            />
+          </div>
 
-                <div class="text-center margin-top-25">
-                    <button type="submit" class="btn btn-mod btn-border btn-large">Send Message</button>
-                </div>
+          <div class="form-group">
+            <label class="form-label" id="subjectLabel" for="sublect"></label>
+            <input
+              type="text"
+              class="form-control"
+              id="subject"
+              name="message_subject"
+              placeholder="Subject"
+              tabindex="3"
+              style="height: 70px; color: white"
+            />
+          </div>
 
-            </form><!-- End form -->
-          
-        </div><!-- End col -->
+          <div class="form-group">
+            <label class="form-label" id="messageLabel" for="message"></label>
+            <textarea
+              rows="6"
+              cols="60"
+              name="message"
+              class="form-control"
+              id="message"
+              placeholder="Your message"
+              tabindex="4"
+              style="color: white"
+            ></textarea>
+          </div>
 
-    </div><!-- End row -->
-    
-  </div><!-- End container -->
+          <div class="text-center margin-top-25">
+            <button type="submit" class="btn btn-mod btn-border btn-large">
+              Send Message
+            </button>
+          </div>
+        </form>
+        <!-- End form -->
+      </div>
+      <!-- End col -->
+    </div>
+    <!-- End row -->
+  </div>
+  <!-- End container -->
 
-{% endif %}
-
-{% endblock %} 
+  {% endif %} 
+</div>
+{% endblock %}

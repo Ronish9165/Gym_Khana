@@ -1,0 +1,13 @@
+
+<form action="" enctype="multipart/form-data" method="POST">
+  {% csrf_token %}
+    <label for="pname">Product Name:</label><br>
+    <input type="text" id="fname" name="product_name"><br>
+    <label for="lname">product details:</label><br>
+    <input type="text" id="lname" name=" product_details">
+    <label for="lname">Product Price:</label><br>
+    <input type="text" id="lname" name=" product_price">
+    <label for="lname">Product Image:</label><br>
+    <input type="file" id="lname" name=" product_image">
+    <input type="submit" value="submit">
+  </form>

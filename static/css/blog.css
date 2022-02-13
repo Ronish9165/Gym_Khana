@@ -1,9 +1,14 @@
 .form-title{
+    padding: 95px;
     margin-top: 100px;
     text-align: center;
+    font-size: 50px;
+    font-weight: 300;
 }
 
 .form-title a{
+    font-size: 50px;
+    font-weight: 300;
     color:black
 }
 

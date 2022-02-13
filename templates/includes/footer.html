@@ -5,7 +5,7 @@
 
     <!--  for company name and description -->
     <div class="footer-items">
-      <a href="#"><img src="/static/images/logo.png" /></a>
+      <a href="{% url 'home' %}"><img src="/static/images/logo.png" /></a>
       <p>Be the first who learns about our
         great promotions!</p>
     </div>
@@ -16,16 +16,16 @@
       <div class="border1"></div>
       <!--for the underline -->
       <ul>
-        <a href="#">
+        <a href="{% url 'home' %}">
           <li>Home</li>
         </a>
-        <a href="#">
-          <li>Search</li>
+        <a href="{% url 'blog' %}">
+          <li>Blogs</li>
         </a>
-        <a href="#">
+        <a href="{% url 'contact' %}">
           <li>Contact</li>
         </a>
-        <a href="#">
+        <a href="">
           <li>About</li>
         </a>
       </ul>

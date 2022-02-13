@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Khana',
+    'product',
 ]
 
 MIDDLEWARE = [
@@ -139,6 +140,6 @@ EMAIL_PORT = '587'
 
 EMAIL_USE_TLS = True
 
-EMAIL_HOST_USER = 'sthronesh11@@gmail.com'
+EMAIL_HOST_USER = 'sthronesh11@gmail.com'
 
 EMAIL_HOST_PASSWORD = 'yedtwrhyzoeowrpu'

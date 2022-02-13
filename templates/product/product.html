@@ -1,0 +1,43 @@
+
+
+{% extends 'base.html' %} 
+{% block content %} 
+{% load static %}
+
+<div class="container mx-auto mt-4">
+    <h2 class="form-title"><a href="{% url 'home' %}"> Home </a>| Shop</h2>
+  <div class="row">
+    {% for product in products %}
+    <div class="col-md-4">
+      <div class="card" style="width: 22rem">
+       
+        <img
+          src="/static//images/product_image/{{product.product_image}}"
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body">
+          <h6 class="card-title mb-2 ">{{product.product_name}}</h6>
+          <p class="card-text">
+            {{product.product_details}}
+          </p>
+          <a href="#" class="button mr-2"> Buy Now</a>
+         
+        </div>
+      </div>
+    </div>
+    {% endfor%}
+  </div>
+  <div class="pagination" style=" text-align: center;">
+    <!-- <li class="page-item previous-page disable"><a class="page-link" href="#">Prev</a></li>
+    <li class="page-item current-page active" ><a class="page-link" href="#">1</a></li>
+    <li class="page-item dots"><a class="page-link" href="#">...</a></li>
+    <li class="page-item current-page"><a class="page-link" href="#">5</a></li>
+    <li class="page-item current-page"><a class="page-link" href="#">6</a></li>
+    <li class="page-item dots"><a class="page-link" href="#">...</a></li>
+    <li class="page-item current-page"><a class="page-link" href="#">10</a></li>
+    <li class="page-item next-page"><a class="page-link" href="#">Next</a></li> -->
+</div>
+</div>
+
+{% endblock %}
