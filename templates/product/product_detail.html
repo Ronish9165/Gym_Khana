@@ -1,0 +1,164 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
+
+.card-wrapper{
+    max-width: 1100px;
+    margin: 0 auto;
+}
+img{
+    width: 100%;
+    display: block;
+}
+.img-display{
+    overflow: hidden;
+}
+
+.img-select{
+    display: flex;
+}
+.img-item{
+    margin: 0.3rem;
+}
+
+.img-item:hover{
+    opacity: 0.8;
+}
+.product-content{
+    padding: 2rem 1rem;
+}
+.product-title{
+    font-size: 3rem;
+    text-transform: capitalize;
+    font-weight: 700;
+    position: relative;
+    color: #12263a;
+    margin: 1rem 0;
+}
+.product-title::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 4px;
+    width: 80px;
+    background: #12263a;
+}
+
+.product-price{
+    margin: 1rem 0;
+    font-size: 1rem;
+    font-weight: 700;
+}
+.product-price span{
+    font-weight: 400;
+}
+.last-price span{
+    color:  #256eff;
+}
+
+.product-detail h2{
+    text-transform: capitalize;
+    color: #12263a;
+    padding-bottom: 0.6rem;
+}
+.product-detail p{
+    font-size: 0.9rem;
+    padding: 0.3rem;
+    opacity: 0.8;
+}
+.product-detail ul{
+    margin: 1rem 0;
+    font-size: 0.9rem;
+}
+.product-detail ul li span{
+    font-weight: 400;
+}
+.purchase-info{
+    margin: 1.5rem 0;
+}
+
+.purchase-info .btn{
+    width: 200px;
+    height: 55px;
+    font-family:'Montserrat';
+    text-transform: uppercase;
+    background: #000;
+    color: white;
+    text-align: center;
+    letter-spacing: 2.2px;
+    justify-content: center;
+    padding: 0.45rem 0.8rem;
+    outline: 0;
+    margin-right: 0.2rem;
+    margin-bottom: 1rem;
+    transition: .3s;
+}
+
+.purchase-info .btn:hover{
+    background-color: #fb5b21;
+}
+
+
+@media screen and (min-width: 992px){
+    .card{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 1.5rem;
+    }
+    .card-wrapper{
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .product-imgs{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .product-content{
+        padding-top: 0;
+    }
+}
+</style>
+
+<div class="card-wrapper">
+  <div class="card">
+    <!-- card left -->
+    <div class="product-imgs">
+      <div class="img-select">
+        <div class="img-item">
+          <a href="#" data-id="1">
+            <img
+              src="{{ single_product.product_image.url }}"
+              alt="shoe image"
+            />
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- card right -->
+    <div class="product-content">
+      <h2 class="product-title">{{ single_product.product_name }}</h2>
+
+      <div class="product-price">
+          <p class="last-price">Price:<span>{{ single_product.product_price }}</span></p>
+      </div>
+
+      <div class="product-detail">
+          <h2>about this item:</h2>
+          <p>{{ single_product.product_details}}</p>
+      </div>
+      <div class="purchase-info">
+          <button type="button" class="btn">Purchase </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

@@ -74,11 +74,7 @@ def blogform(request):
         blogs=BlogForm(request.POST,request.FILES)
 
         blogs.save()
-        return redirect ("/templates/blog")
-
-       
-
-
+        return redirect ("blog")
 
     else:
 
@@ -91,11 +87,11 @@ def blogform(request):
 
 def showblog(request):
     blogs=Blogs.objects.all()
-    return render (request,"pages/blog.html",{'Khana':blogs})
+    return render (request,"pages/blog.html",{'blogs':blogs})
 
-
+@login_required(login_url='login')
 def blog_detail(request, id):
-    single_blog = get_object_or_404(pk=id)
+    single_blog = get_object_or_404(Blogs, pk=id)
 
     data = {
         'single_blog': single_blog,

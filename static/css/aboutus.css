@@ -3,6 +3,15 @@
 .container h1{
    font-size:50px
 }
+
+.cta{
+   margin: 100px auto;
+   width: 100%;
+   background-image: url(static/images/cta.jpg);
+   background-position: center;
+   background-size: cover;
+}
+
 .about{
    padding:15% 0;
    width:100%;

@@ -10,9 +10,12 @@ urlpatterns = [
     path("register/", views.register, name='register'),
     path('contact', views.contact, name='contact'),
     path('about', views.about, name='about'),
-    path('form', views.blogform, name="form"),
+    path('blogform', views.blogform, name="blogform"),
     path('blog', views.showblog, name='blog'),
-    path('blog-detail', views.blog_detail, name='blog_detail'),
+
+    path('<int:id>', views.blog_detail, name='blog_detail'),
+
+
     path('logout', views.logout, name="logout"),
     path('adminlogin',LoginView.as_view(template_name='admin/adminlogin.html'), name="adminlogin"),
     path('profile', views.profile, name='profile'),

@@ -1,11 +1,28 @@
+{% extends 'admin/admindashboard.html' %}
+
+{% block content %}
+
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/formstyle.css' %}">
 
 <form action="" enctype="multipart/form-data" method="POST">
     {% csrf_token %}
-      <label for="pname">Blog Name:</label><br>
-      <input type="text" id="fname" name="blog_name"><br>
-      <label for="lname">blog details:</label><br>
-      <input type="text" id="lname" name=" blog_details">
-      <label for="lname">blogImage:</label><br>
-      <input type="file" id="lname" name=" blog_image">
-      <input type="submit" value="submit">
-    </form>
+    <div class="change-container change-container">
+      <label class="labe">Blog Name:</label><br>
+      <input class="dash-field" type="text" id="bname"  placeholder="Blog Name" name="blog_name"><br>
+      <label class="labe">Blog Description:</label><br>
+      <textarea class="dash-field" name="blog_details"
+        rows="6"
+        cols="60"
+        name="message"
+        class="form-control"
+        id="message"
+        placeholder="Description"
+        tabindex="4"
+      ></textarea><br>
+      <label class="labe">Blog Image:</label><br>
+      <input class="dash-field" type="file" id="bimage" name=" blog_image"><br>
+      <input class="dash-field" type="submit" value="submit" style="background-color:skyblue;">
+    </div>
+</form>
+{% endblock %}

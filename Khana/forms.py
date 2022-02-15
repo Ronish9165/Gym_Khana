@@ -23,4 +23,4 @@ class UserResgistrationForm(forms.ModelForm):
 class BlogForm(forms.ModelForm): 
     class Meta:
         model = Blogs
-        fields = ("__all__")     
+        fields = ["blog_name","blog_details","blog_image"]     
