@@ -11,6 +11,7 @@ from Khana.forms import UserResgistrationForm
 from Khana.forms import BlogForm
 from Khana.models import Blogs
 from . import models
+from product.models import *
 
 
 User = get_user_model()
@@ -28,14 +29,19 @@ def login(request):
         user = authenticate(username=username, password=password)
 
         if user is not None:
-            auth.login(request, user)
-            return redirect('home')
-        
+            if not user.is_staff:
+                auth.login(request, user)
+                return redirect('home')
+
+            elif user.is_staff:
+                auth.login(request, user)
+                return redirect('admindashboard')
         else:
             messages.info(request, 'Invalid credentials')
             return redirect('login')
     else:  
-        return render(request, 'pages/login.html')   
+        return render(request, 'pages/login.html')  
+
 
 
 def register(request):
@@ -135,16 +141,10 @@ def contact(request):
 
         return render(request, 'pages/contactus.html' , {})      
 
+
 def logout(request):
-
-    if request.method == 'POST':
-
-        auth.logout(request)
-
-        # messages.success(request, 'You are successfully logged out.')
-
-        return redirect('login')
-
+    auth.logout(request)
+    # messages.success(request, "Sucessfully Logged Out")
     return redirect('home')
 
 @login_required(login_url='login')
@@ -170,9 +170,22 @@ def edit_profile_view(request):
             return HttpResponseRedirect('profile')
 
     return render(request,'pages/edit_profile.html',context=mydict)
-
+    
+@login_required(login_url='login')
 def admin_dashboard_view(request):
-    return render(request, 'admin/admindashboard.html')
+    user = get_user_model()
+    usercount = user.objects.all().filter(is_superuser=False).count()
+    productcount = Products.objects.all().count()
+    # productcount = Khana.objects.all().count()
+    
+    order = Products.objects.all()
+    data = {
+        'order': order,
+        'usercount':usercount,
+        # 'bookingcount':bookingcount,
+        'productcount':productcount,
+    }
+    return render(request, 'admin/admindashboard.html',data)
 
 # # for checkout of cart
 def cart_view(request):

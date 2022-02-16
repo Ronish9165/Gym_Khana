@@ -53,7 +53,7 @@ def admindashboard_view(request):
     usercount = user.objects.all().filter(is_superuser=False).count()
     productcount = Products.objects.all().count()
     # productcount = Khana.objects.all().count()
-
+    
     order = Products.objects.all()
     data = {
         'order': order,

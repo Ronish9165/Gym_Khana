@@ -28,17 +28,17 @@
                  padding-top: 1px;">Contact Us</a>
             </li>
         </ul>
-        <ul class="navbar-nav ml-auto">
+        {% comment %} <ul class="navbar-nav ml-auto">
             <li class="nav-item">
                 <a href="{% url 'cart' %}"><i class="fa fa-shopping-cart fa-2x" style="color: white "></i></a>
             </li>
-        </ul>
+        </ul> {% endcomment %}
         {% if request.user.is_authenticated %}+
         <div class="dropdown">
             <a class="fa fa-user fa-2x dropdown-toggle" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:white; cursor:pointer;"></a>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" >
+                <a class="dropdown-item disabled" href="#" style="color:white;">Hello,<br>{{ user.username }}</a>
                 <a class="dropdown-item" href="{% url 'profile' %}">Profile</a>
-                <a class="dropdown-item" href="#">settings</a>
                 <a href="javascript:{document.getElementById('logout').submit()}" class="dropdown-item"><i class="fa fa-sign-out"></i>Logout</a>
     
                 <form id="logout" action="{% url 'logout' %}" method="POST">
@@ -51,14 +51,20 @@
             </div>
         </div>
         {% else %}
-        <div class="dropdown">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a href="{% url 'login' %}"><i class="fa fa-user fa-2x" style="color: white "></i></a>
+            </li>
+        </ul>
+        {% comment %} <a class="fa fa-user fa-2x" href="{% url 'login' %}"></a> {% endcomment %}
+        {% comment %} <div class="dropdown">
             <a class="fa fa-user fa-2x dropdown-toggle" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:white; cursor:pointer;"></a>
           
             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" >
               <a class="dropdown-item" href="{% url 'adminlogin' %}">Admin</a>
               <a class="dropdown-item" href="{% url 'login' %}">User</a>
             </div>
-        </div>
+        </div> {% endcomment %}
         {% endif %}
     </div>
 </nav>

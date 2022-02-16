@@ -2,7 +2,7 @@
 {% block content %} 
 {% load static %}
 
-<link rel="stylesheet" href="{% static 'css/formstyle.css' %}">
+<link rel="stylesheet" href="{% static 'admincss/formstyle.css' %}">
 
 <form action="" enctype="multipart/form-data" method="POST">
   {% csrf_token %}
@@ -23,7 +23,7 @@
     <input class="dash-field"  type="text" id="lname" name=" product_price"><br>
     <label class="labe">Product Image:</label><br>
     <input class="dash-field"  type="file" id="lname" name=" product_image"><br>
-    <input class="dash-field" type="submit" value="submit">
+    <input class="dash-field" type="submit" value="submit" style="background-color:skyblue;">
   
   </div>
   </form>
