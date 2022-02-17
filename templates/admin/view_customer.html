@@ -1,0 +1,72 @@
+{% extends 'admin/admindashboard.html' %}
+
+{% block content %}
+
+{% load static %}
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h6 class="panel-title">Total Customer List</h6>
+    </div>
+    <table class="table table-hover" id="dev-table">
+        <thead>
+            <tr>
+                <th>User Name</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        {% for c in users %}
+        <tr>
+            <td> {{c.username}}</td>
+            <td> {{c.first_name}}</td>
+            <td> {{c.last_name}}</td>
+            <td>{{c.email}}</td>
+            <td><a class="btn btn-danger btn-xs" href="#"><span class="glyphicon glyphicon-trash"></span></a></td>
+
+        </tr>
+        {% endfor %}
+    </table>
+
+    <!-- PAGINATION STARTS -->
+    <nav aria-label="..." class="container pt-5">
+        {% if users.has_other_pages %}
+        <ul class="pagination">
+            {% if users.has_previous %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{ users.previous_page_number }}"><i
+                        class="fas fa-angle-left"></i></a>
+            </li>
+            {% else %}
+            <li class="page-item disabled">
+                <a class="page-link"><i class="fas fa-angle-left"></i></a>
+            </li>
+            {% endif %}
+
+            {% for i in users.paginator.page_range %}
+            {% if users.number == i %}
+            <li class="page-item active"><a class="page-link" href="#">{{i}}</a></li>
+            {% else %}
+            <li class="page-item"><a class="page-link" href="?page={{i}}">{{i}}</a></li>
+            {% endif %}
+            {% endfor %}
+
+            {% if users.has_next %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{ users.next_page_number }}"><i
+                        class="fas fa-angle-right"></i></a>
+            </li>
+            {% else %}
+            <li class="page-item disabled">
+                <a class="page-link"><i class="fas fa-angle-right"></i></a>
+            </li>
+            {% endif %}
+        </ul>
+        {% endif %}
+    </nav>
+    <!-- PAGINATION ENDS -->
+</div>
+
+{% endblock %}

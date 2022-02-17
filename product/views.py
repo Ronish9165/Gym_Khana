@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from product.forms import ProductForm
+from product.forms import ProductForm, BookForm
 from product.models import Products
 from django.contrib.auth import get_user_model
 from django.shortcuts import get_object_or_404
@@ -46,6 +46,27 @@ def product_detail(request, id):
     }
 
     return render(request, 'product/product_detail.html', data)
+
+def purchase(request, p_id):
+    print(request)
+    if request.method == "POST":
+        form = BookForm(request.POST)
+        try:
+            form.save()
+            messages.success(request, "your booking was done")
+            return redirect('product')
+        except:
+            print("error")
+    else:
+        form = BookForm()
+    products = Products.objects.get(product_id=p_id)
+    return render(request, 'product/purchase.html', {'products': products, 'form': form})
+
+
+@login_required(login_url='login')
+def book_details(request, p_id):
+    purchase = Products.objects.get(product_id=p_id)
+    return render(request, 'admin/purchase.html', {'Products': purchase})
 
 
 def admindashboard_view(request):

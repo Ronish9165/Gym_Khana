@@ -10,6 +10,8 @@ from django.contrib.auth.decorators import login_required
 from Khana.forms import UserResgistrationForm
 from Khana.forms import BlogForm
 from Khana.models import Blogs
+from django.core.paginator import Paginator
+
 from . import models
 from product.models import *
 
@@ -187,7 +189,15 @@ def admin_dashboard_view(request):
     }
     return render(request, 'admin/admindashboard.html',data)
 
-# # for checkout of cart
-def cart_view(request):
-    #for cart counter
-    return render(request,'product/cart.html')
+@login_required(login_url='adminlogin')
+def view_customer(request):
+    User = get_user_model()
+    users=User.objects.all().order_by('username').filter(is_superuser=False)
+    paginator = Paginator(users, 1)
+    page = request.GET.get('page')
+    paged_product = paginator.get_page(page)
+    data = {
+        'users': paged_product,
+        
+    }
+    return render(request,'admin/view_customer.html',data)

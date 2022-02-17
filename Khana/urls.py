@@ -14,14 +14,13 @@ urlpatterns = [
     path('blogform', views.blogform, name="blogform"),
     path('blog', views.showblog, name='blog'),
     path('<int:id>', views.blog_detail, name='blog_detail'),
-
-
     path('logout', views.logout, name="logout"),
     path('adminlogin',LoginView.as_view(template_name='admin/adminlogin.html'), name="adminlogin"),
     path('profile', views.profile, name='profile'),
     path('admindashboard', views.admin_dashboard_view, name='admindashboard'),
+    path('view-customer', views.view_customer, name='view-customer'),
+
     # path("homepage/",views.homepage, name='homepage'),
-    path('cart', views.cart_view,name='cart'),
 
     
     path('password_reset/',

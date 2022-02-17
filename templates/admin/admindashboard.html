@@ -14,15 +14,13 @@
 <body>
     <div class="d-flex" id="wrapper">
         <!-- Sidebar -->
-        
-        {{ usercount }}
         <div class="bg-white" id="sidebar-wrapper">
             <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom"><i
                     class="fas fa-dumbbell me-2"></i>GYMKHANA</div>
             <div class="list-group list-group-flush my-3">
                 {% comment %} <a href="#" class="list-group-item list-group-item-action bg-transparent second-text active"><i
                         class="fas fa-tachometer-alt me-2"></i>Dashboard</a> {% endcomment %}
-                <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                <a href="{% url 'view-customer' %}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                         class="fas fa-user me-2"></i>Customers</a>
                 <a href="{% url 'blogform' %}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                         class="fas fa-blog me-2"></i>Blogs</a>
@@ -69,7 +67,6 @@
                                 <h3 class="fs-2">{{ productcount }}</h3>
                                 <p class="fs-5">Products</p>
                             </div>
-                            <i class="fas fa-gift fs-1 primary-text border rounded-full secondary-bg p-3"></i>
                         </div>
                     </div>
 
@@ -79,8 +76,7 @@
                                 <h3 class="fs-2">{{usercount}}</h3>
                                 <p class="fs-5">Users</p>
                             </div>
-                            <i
-                                class="fas fa-hand-holding-usd fs-1 primary-text border rounded-full secondary-bg p-3"></i>
+                    
                         </div>
                     </div>
 
