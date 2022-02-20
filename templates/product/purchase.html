@@ -1,4 +1,4 @@
-% extends 'base.html' %}
+{% extends 'base.html' %}
 {% block content %}
 {% load static %}
 
@@ -129,21 +129,21 @@
 <body  >
 
 
-    <h1>Musical Instruments</h1>
+
     <div class="content" style="background-image: url(//static/images/sale.jpeg);" >
     <section>
       <div class="register-wrapper">
       <div class="register-block">
       <h3 class="register-title">Buy Now</h3>
         <p>Please check the correct details to buy your products</p>
-        <form action="/purchase/{{product.product_id}}" method="POST">
+        <form action="" method="POST">
 
-
+          {% comment %} /purchase/{{product.product_id}} {% endcomment %}
           {% csrf_token %}
 
         
         <label for="fname">Product Id</label><br>
-        <input type="text" name="product_name" value="{{product.product_id}}" placeholder="Prodct Name"/>
+        <input type="text" name="product_name" value="{{products.product_id}}" placeholder="Prodct Name"/>
 
         <label for="fname">Your Name</label><br>
         <input type="text" name="your_name" placeholder="Your Name"/>
@@ -159,11 +159,6 @@
 
         <label for="fname">Location</label><br>
         <input type="text" name="location" placeholder="Prodct Name"/>
-
-
-
-
-    
 
               <input type="submit" value="Submit"/>
   

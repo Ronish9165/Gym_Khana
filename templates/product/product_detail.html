@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% comment %} {% extends 'base.html' %}
 
 {% block content %}
 {% load static %}
@@ -149,16 +149,16 @@ img{
       <div class="product-price">
           <p class="last-price">Price:<span>{{ single_product.product_price }}</span></p>
       </div>
-
+/product/purchase/{{single_product.product_id}}
       <div class="product-detail">
           <h2>about this item:</h2>
           <p>{{ single_product.product_details}}</p>
       </div>
       <div class="purchase-info">
-          <a href="/product/purchase/{{single_product.product_id}}"><button type="button" class="btn">Purchase </button></a>
+          <a href=""><button type="button" class="btn">Purchase </button></a>
       </div>
     </div>
   </div>
 </div>
 
-{% endblock %}
+{% endblock %} {% endcomment %}

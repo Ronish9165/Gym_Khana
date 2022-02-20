@@ -39,7 +39,7 @@ def login(request):
                 auth.login(request, user)
                 return redirect('admindashboard')
         else:
-            messages.info(request, 'Invalid credentials')
+            messages.info(request, 'Incorrect Username or password.')
             return redirect('login')
     else:  
         return render(request, 'pages/login.html')  
@@ -153,6 +153,12 @@ def logout(request):
 def profile(request):
     return render(request, 'pages/profile.html')
 
+def delete_user(request, user_id):
+    user = User.objects.get(id=user_id)
+    user.delete()
+    messages.add_message(request, messages.SUCCESS, 'User is deleted successfully')
+    return redirect('login')
+
 
 @login_required(login_url='login')
 def edit_profile_view(request):
@@ -201,3 +207,4 @@ def view_customer(request):
         
     }
     return render(request,'admin/view_customer.html',data)
+

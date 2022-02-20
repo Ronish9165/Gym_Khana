@@ -17,8 +17,10 @@ urlpatterns = [
     path('logout', views.logout, name="logout"),
     path('adminlogin',LoginView.as_view(template_name='admin/adminlogin.html'), name="adminlogin"),
     path('profile', views.profile, name='profile'),
+    path('deleteuser/<int:user_id>', views.delete_user, name='delete_user'),
     path('admindashboard', views.admin_dashboard_view, name='admindashboard'),
     path('view-customer', views.view_customer, name='view-customer'),
+   
 
     # path("homepage/",views.homepage, name='homepage'),
 

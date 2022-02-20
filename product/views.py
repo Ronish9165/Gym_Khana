@@ -6,6 +6,7 @@ from django.shortcuts import get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.contrib.auth.models import User
+from django.core.paginator import Paginator
 
 # Create your views here.
 
@@ -37,15 +38,15 @@ def showproduct(request):
     products=Products.objects.all()
     return render (request,"product/product.html",{'products':products})
 
-@login_required(login_url='login')
-def product_detail(request, id):
-    single_product = get_object_or_404(Products, pk=id)
+# @login_required(login_url='login')
+# def product_detail(request, id):
+#     single_product = get_object_or_404(Products, pk=id)
 
-    data = {
-        'single_product': single_product,
-    }
+#     data = {
+#         'single_product': single_product,
+#     }
 
-    return render(request, 'product/product_detail.html', data)
+#     return render(request, 'product/product_detail.html', data)
 
 def purchase(request, p_id):
     print(request)
@@ -54,7 +55,7 @@ def purchase(request, p_id):
         try:
             form.save()
             messages.success(request, "your booking was done")
-            return redirect('product')
+            return redirect('/')
         except:
             print("error")
     else:
@@ -88,3 +89,42 @@ def admindashboard_view(request):
     else:
         messages.error(request, "Invalid login credentials")
         return redirect('admin')
+
+def edit_product(request,p_id):
+
+    try:
+
+       product=Products.objects.get(product_id=p_id)
+
+       return render(request, "product/product_edit.html", {'product':product})
+
+    except:
+
+       print("No Data Found")
+
+    return redirect("/product/viewproduct")
+
+
+@login_required(login_url='adminlogin')
+def view_product(request):
+    product=Products.objects.all()
+    data = {
+        'product':product,
+        
+    }
+    return render(request,'admin/view_product.html',data)
+
+def update_product(request,p_id):
+
+    product=Products.objects.get(product_id=p_id)
+
+    form=ProductForm(request.POST, instance=product)
+
+    form.save()
+
+    return redirect ("/product/view-product")
+
+def delete_product(request, p_id):
+    product = Products.objects.get(product_id=p_id)
+    product.delete()
+    return redirect('/product/view-product')

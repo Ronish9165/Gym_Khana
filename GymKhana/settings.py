@@ -80,7 +80,7 @@ WSGI_APPLICATION = 'GymKhana.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'gymkhana_db',
+        'NAME': 'gymkhana_db2',
         'USER': 'postgres',
         'PASSWORD': 'ronish123',
         'HOST': 'localhost',

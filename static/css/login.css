@@ -128,6 +128,19 @@ button.ghost:hover{
     opacity: 0;
 }
 
+.message{ 
+    color: #d02e2e;
+    background-color: #fff6f6;
+    border-radius: 3px;
+    padding: 6px 12px;
+    margin-bottom: 15px;
+    font-size: .9em;
+    border: 1px solid #d02e2e;
+    text-align: left;
+}
+
+
+
 .overlay-container {
     position: absolute;
     top: 0;
