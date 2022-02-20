@@ -1,0 +1,40 @@
+{% extends 'admin/admindashboard.html' %}
+
+{% block content %}
+
+{% load static %}
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h6 class="panel-title">Total Customer List</h6>
+    </div>
+    <table class="table table-hover" id="dev-table">
+        <thead>
+            <tr>
+                <th>Booking Id</th>
+                <th>Product Name</th>
+                <th>Customer Name</th>
+                <th>Email</th>
+                <th>Phone Number</th>
+                <th>Date</th>
+                <th>Location</th>
+            </tr>
+        </thead>
+        {% for b in booking %}
+        <tr>
+            <td> {{b.Mbooking_id}}</td>
+            <td> {{b.product_name}}</td>
+            <td> {{b.your_name}}</td>
+            <td>{{b.email}}</td>
+            <td>{{b.phone_number}}</td>
+            <td>{{b.date}}</td>
+            <td>{{b.location}}</td>
+            <td><a class="btn btn-danger btn-xs" href="#"><span class="glyphicon glyphicon-trash"></span></a></td>
+
+        </tr>
+        {% endfor %}
+    </table>
+
+</div>
+
+{% endblock %}

@@ -6,31 +6,31 @@
 
 <div class="panel panel-primary">
     <div class="panel-heading">
-        <h6 class="panel-title">Total Product List</h6>
+        <h6 class="panel-title">Total Blog List</h6>
     </div>
     <table class="table table-hover" id="dev-table">
         <thead>
             <tr>
-                <th>Product Name</th>
-                <th>Product Details</th>
-                <th>Product Price</th>
-                <th>Product image</th>
+                <th>Blog ID</th>
+                <th>Blog Name</th>
+                <th>Bog Description</th>
+                <th>Blog image</th>
             </tr>
         </thead>
-        {% for p in product %}
+        {% for single_blog in blog %}
         <tr>
-            <td> {{p.product_name}}</td>
-            <td>{{p.product_details}}</td>
-            <td>{{p.product_price}}</td>
-            <td>{{p.product_image}}</td>
-            <td><a class="btn btn-danger btn-xs" href="/product/edit_product/{{p.product_id}}"><span class="glyphicon glyphicon-trash"></span>edit</a></td>
-            <td><a class="btn btn-danger btn-xs" href="/product/delete_product/{{p.product_id}}"><span class="glyphicon glyphicon-trash"></span>Delete</a></td>
+            <td> {{single_blog.blog_id}}</td>
+            <td>{{single_blog.blog_name}}</td>
+            <td>{{single_blog.blog_details}}</td>
+            <td>{{single_blog.blog_image}}</td>
+            <td><a class="btn btn-danger btn-xs" href="/khana/edit_blog/{{single_blog.blog_id}}"><span class="glyphicon glyphicon-trash"></span>edit</a></td>
+            <td><a class="btn btn-danger btn-xs" href="/khana/delete_blog/{{ingle_blog.blog_id}}"><span class="glyphicon glyphicon-trash"></span>Delete</a></td>
 
         </tr>
         {% endfor %}
     </table>
-    <a href="{% url 'form' %}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
-        class="btn btn-secondary">Add Products</i></a>
+    <a href="{% url 'blogform' %}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+        class="btn btn-secondary">Add Blogs</i></a>
 
     <!-- PAGINATION STARTS -->
     <nav aria-label="..." class="container pt-5">

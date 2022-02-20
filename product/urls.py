@@ -7,6 +7,7 @@ urlpatterns = [
     path('form', views.productform, name="form"),
     path('product', views.showproduct, name="product"),
     path('view-product', views.view_product, name='view-product'),
+    path('view-booking', views.view_booking, name='view-booking'),
 
     #  path('<int:id>', views.product_detail, name='product_detail'),
 

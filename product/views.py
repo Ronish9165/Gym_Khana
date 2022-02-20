@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 from product.forms import ProductForm, BookForm
-from product.models import Products
+from product.models import Products, Booking
 from django.contrib.auth import get_user_model
 from django.shortcuts import get_object_or_404
 from django.contrib.auth.decorators import login_required
@@ -20,10 +20,6 @@ def productform(request):
 
         products.save()
         return redirect ("/product/product")
-
-       
-
-
 
     else:
 
@@ -90,6 +86,41 @@ def admindashboard_view(request):
         messages.error(request, "Invalid login credentials")
         return redirect('admin')
 
+
+@login_required(login_url='adminlogin')
+def view_product(request):
+    user = get_user_model()
+    product=Products.objects.all()
+    usercount = user.objects.all().filter(is_superuser=False).count()
+    productcount = Products.objects.all().count()
+    bookingcount = Booking.objects.all().count()
+    data = {
+        'product':product,
+        'usercount':usercount,
+        'bookingcount':bookingcount,
+        'productcount':productcount,
+        
+    }
+    return render(request,'admin/view_product.html',data)
+
+
+@login_required(login_url='adminlogin')
+def view_booking(request):
+    user = get_user_model()
+    booking=Booking.objects.all()
+    usercount = user.objects.all().filter(is_superuser=False).count()
+    bookingcount = Booking.objects.all().count()
+    productcount = Products.objects.all().count()
+    data = {
+        'booking':booking,
+        'usercount':usercount,
+        'bookingcount':bookingcount,
+        'productcount':productcount,
+        
+    }
+    return render(request,'admin/view_booking.html',data)
+
+    
 def edit_product(request,p_id):
 
     try:
@@ -103,16 +134,6 @@ def edit_product(request,p_id):
        print("No Data Found")
 
     return redirect("/product/viewproduct")
-
-
-@login_required(login_url='adminlogin')
-def view_product(request):
-    product=Products.objects.all()
-    data = {
-        'product':product,
-        
-    }
-    return render(request,'admin/view_product.html',data)
 
 def update_product(request,p_id):
 

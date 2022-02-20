@@ -1,0 +1,32 @@
+{% extends 'admin/admindashboard.html' %} 
+{% block content %} 
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'admincss/formstyle.css' %}">
+
+<form action="/khana/update_blog/{{single_blog.blog_id}}" enctype="multipart/form-data" method="POST">
+  {% csrf_token %}
+  <div class="change-container change-container">
+    <label class="labe">Product Name:</label><br>
+    <input class="dash-field"  type="text" id="fname" name="product_name" value="{{single_blog.blog_name}}"><br>
+    <label class="labe">Product Description:</label><br>
+    <input class="dash-field" name="product_details"
+        rows="6"
+        cols="60"
+        name="message"
+        class="form-control"
+        id="message"
+        placeholder="Description"
+        tabindex="4"
+        value="{{single_blog.blog_details}}"
+      ></input><br><br>
+    <label class="labe">Product Price:</label><br>
+    <input class="dash-field"  type="text" name=" product_price" value="{{single_blog.product_price}}"><br>
+    <label class="labe">Product Image:</label><br>
+    <input class="dash-field"  type="file" name=" product_image" value={{single_blog.blog_image}}><br>
+    <input class="dash-field" type="submit"  value="Update" style="background-color:skyblue;">
+  
+  </div>
+  </form>
+
+  {% endblock %}

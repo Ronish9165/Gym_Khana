@@ -76,10 +76,25 @@ def about(request):
 def blogform(request):
 
     print(request.FILES)
+    usercount = User.objects.all().filter(is_superuser=False).count()
+    productcount = Products.objects.all().count()
+
+    data={
+            'usercount':usercount,
+            # 'bookingcount':bookingcount,
+            'productcount':productcount,
+        
+            
+        }
+
+
+ 
 
     if request.method=="POST":
 
         blogs=BlogForm(request.POST,request.FILES)
+        
+       
 
         blogs.save()
         return redirect ("blog")
@@ -94,18 +109,75 @@ def blogform(request):
 
 
 def showblog(request):
+    user = get_user_model()
     blogs=Blogs.objects.all()
-    return render (request,"pages/blog.html",{'blogs':blogs})
+
+    return render (request,"pages/blog.html",{'blogs':blogs,})
 
 @login_required(login_url='login')
 def blog_detail(request, id):
     single_blog = get_object_or_404(Blogs, pk=id)
+    usercount = User.objects.all().filter(is_superuser=False).count()
+    productcount = Products.objects.all().count()
+    # productcount = Khana.objects.all().count()
 
     data = {
         'single_blog': single_blog,
+        'product':productcount,
+       
+        'usercount':usercount,
+        # 'bookingcount':bookingcount,
+        'productcount':productcount,
     }
 
     return render(request, 'pages/blog_detail.html', data)
+
+def edit_blog(request,p_id):
+
+    try:
+
+       product=Products.objects.get(product_id=p_id)
+
+       return render(request, "product/product_edit.html", {'product':product})
+
+    except:
+
+       print("No Data Found")
+
+    return redirect("/product/viewproduct")
+
+def update_blog(request,p_id):
+
+    blog=Blogs.objects.get(blog_id=p_id)
+
+    form=BlogForm(request.POST, instance=blog)
+
+    form.save()
+
+    return redirect ("/pages/view-blog")
+
+def delete_blog(request, p_id):
+    blog = Blogs.objects.get(blog_id=p_id)
+    blog.delete()
+    return redirect('/pages/view-blog')
+
+
+
+@login_required(login_url='adminlogin')
+def view_blog(request):
+    user = get_user_model()
+    single_blog=Blogs.objects.all()
+    usercount = user.objects.all().filter(is_superuser=False).count()
+    productcount = Blogs.objects.all().count()
+    bookingcount = Booking.objects.all().count()
+    data = {
+        'single_blog':single_blog,
+        'usercount':usercount,
+        'bookingcount':bookingcount,
+        'productcount':productcount,
+        
+    }
+    return render(request,'admin/view_blog.html',data)
 
 def contact(request):
 
@@ -199,11 +271,16 @@ def admin_dashboard_view(request):
 def view_customer(request):
     User = get_user_model()
     users=User.objects.all().order_by('username').filter(is_superuser=False)
-    paginator = Paginator(users, 1)
+    paginator = Paginator(users, 2)
     page = request.GET.get('page')
     paged_product = paginator.get_page(page)
+    usercount = User.objects.all().filter(is_superuser=False).count()
+    productcount = Products.objects.all().count()
     data = {
         'users': paged_product,
+        'usercount':usercount,
+        # 'bookingcount':bookingcount,
+        'productcount':productcount,
         
     }
     return render(request,'admin/view_customer.html',data)

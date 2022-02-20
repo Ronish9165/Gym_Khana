@@ -22,10 +22,15 @@
                         class="fas fa-tachometer-alt me-2"></i>Dashboard</a> {% endcomment %}
                 <a href="{% url 'view-customer' %}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                         class="fas fa-user me-2"></i>Customers</a>
-                <a href="{% url 'blogform' %}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                        
+                <a href="{% url 'view-blog' %}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                         class="fas fa-blog me-2"></i>Blogs</a>
+
                <a href="{% url 'view-product' %}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                         class="fas fa-gift me-2"></i>Products</a>
+                        
+                <a href="{% url 'view-booking' %}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                        class="fas fa-bookmark me-2"></i>Booking</a>                        
                 
                 <a href="/logout" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold"><i
                         class="fas fa-power-off me-2"></i>Logout</a>
@@ -83,8 +88,8 @@
                     <div class="col-md-3">
                         <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
                             <div>
-                                <h3 class="fs-2">3899</h3>
-                                <p class="fs-5">Delivery</p>
+                                <h3 class="fs-2">{{ bookingcount}}</h3>
+                                <p class="fs-5">Booking</p>
                             </div>
                             <i class="fas fa-truck fs-1 primary-text border rounded-full secondary-bg p-3"></i>
                         </div>
