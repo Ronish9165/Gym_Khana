@@ -111,11 +111,13 @@ def view_booking(request):
     usercount = user.objects.all().filter(is_superuser=False).count()
     bookingcount = Booking.objects.all().count()
     productcount = Products.objects.all().count()
+    product = Products.objects.all()
     data = {
         'booking':booking,
         'usercount':usercount,
         'bookingcount':bookingcount,
         'productcount':productcount,
+        'products':product
         
     }
     return render(request,'admin/view_booking.html',data)

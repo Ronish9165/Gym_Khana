@@ -77,11 +77,12 @@ def blogform(request):
 
     print(request.FILES)
     usercount = User.objects.all().filter(is_superuser=False).count()
+    bookingcount = Booking.objects.all().count()
     productcount = Products.objects.all().count()
 
     data={
             'usercount':usercount,
-            # 'bookingcount':bookingcount,
+            'bookingcount':bookingcount,
             'productcount':productcount,
         
             
@@ -136,30 +137,28 @@ def edit_blog(request,p_id):
 
     try:
 
-       product=Products.objects.get(product_id=p_id)
+       blog=Blogs.objects.get(blog_id=p_id)
 
-       return render(request, "product/product_edit.html", {'product':product})
+       return render(request, "pages/blog_edit.html", {'single_blog':blog})
 
     except:
 
        print("No Data Found")
 
-    return redirect("/product/viewproduct")
+    return redirect("/view-blog")
 
 def update_blog(request,p_id):
 
     blog=Blogs.objects.get(blog_id=p_id)
-
-    form=BlogForm(request.POST, instance=blog)
-
+    form=BlogForm(request.POST,request.FILES, instance=blog)
     form.save()
 
-    return redirect ("/pages/view-blog")
+    return redirect ("/view-blog")
 
 def delete_blog(request, p_id):
     blog = Blogs.objects.get(blog_id=p_id)
     blog.delete()
-    return redirect('/pages/view-blog')
+    return redirect('/view-blog')
 
 
 
@@ -168,7 +167,7 @@ def view_blog(request):
     user = get_user_model()
     single_blog=Blogs.objects.all()
     usercount = user.objects.all().filter(is_superuser=False).count()
-    productcount = Blogs.objects.all().count()
+    productcount = Products.objects.all().count()
     bookingcount = Booking.objects.all().count()
     data = {
         'single_blog':single_blog,
@@ -256,13 +255,13 @@ def admin_dashboard_view(request):
     user = get_user_model()
     usercount = user.objects.all().filter(is_superuser=False).count()
     productcount = Products.objects.all().count()
-    # productcount = Khana.objects.all().count()
+    bookingcount = Booking.objects.all().count()
     
     order = Products.objects.all()
     data = {
         'order': order,
         'usercount':usercount,
-        # 'bookingcount':bookingcount,
+        'bookingcount':bookingcount,
         'productcount':productcount,
     }
     return render(request, 'admin/admindashboard.html',data)
@@ -276,10 +275,11 @@ def view_customer(request):
     paged_product = paginator.get_page(page)
     usercount = User.objects.all().filter(is_superuser=False).count()
     productcount = Products.objects.all().count()
+    bookingcount = Booking.objects.all().count()
     data = {
         'users': paged_product,
         'usercount':usercount,
-        # 'bookingcount':bookingcount,
+        'bookingcount':bookingcount,
         'productcount':productcount,
         
     }

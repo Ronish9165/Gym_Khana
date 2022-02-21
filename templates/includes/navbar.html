@@ -1,7 +1,7 @@
 {% load static%}
 <nav class="navbar navbar-expand-lg navbar-light fixed-top">
     <a class="navbar-brand" href="{% url 'home' %}"><img src="/static/images/logo.png" /></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+    <button class="navbar-toggler" style=" background-color: white;" type="button" data-toggle="collapse" data-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -35,7 +35,7 @@
         </ul> {% endcomment %}
         {% if request.user.is_authenticated %}+
         <div class="dropdown">
-            <a class="fa fa-user fa-2x dropdown-toggle" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:white; cursor:pointer;"></a>
+            <a class="fa fa-user fa-2x dropdown-toggle " role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:white; cursor:pointer;"></a>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" >
                 <a class="dropdown-item disabled" href="#" style="color:white;">Hello,<br>{{ user.username }}</a>
                 <a class="dropdown-item" href="{% url 'profile' %}">Profile</a>
