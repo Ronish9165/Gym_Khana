@@ -16,7 +16,7 @@
             z-index: 3;
             padding: 100px;
             font-size:18px;
-            color: #999999;
+            margin-top:50px;
           }
        .register-wrapper * {
             box-sizing: border-box;
@@ -45,7 +45,7 @@
            .register-wrapper form input[type="email"]:active, 
            .register-wrapper form input[type="password"]:focus, 
            .register-wrapper form input[type="password"]:active {
-                 border-color: #cccccc;
+            border-color: #cccccc;
                }
        
        .register-wrapper form input[type="submit"] {
@@ -55,10 +55,7 @@
             padding: 0 20px;
             font-size: 1rem;
             background-color: #b3b3b3;
-            background-size: 100%;
-                     /* rgba(0, 0, 0, 0) 75%,rgba(0, 0, 0, 0)); */
-           
-            
+            background-size: 100%;       
           }
        
        .register-wrapper form input[type="submit"]:hover {
@@ -75,10 +72,9 @@
             position: relative;
             display: block;
             width: 100%;
-            max-width: 300px;
             margin: auto;
             padding: 30px;
-            background-color: white;
+            background-color: #898888;
             box-shadow: 0 0 50px rgba(0, 0, 0, 0.2);
             border-radius: 5px;
            
@@ -116,19 +112,27 @@
             -webkit-transform: scale(0.92) translate(0, 32px);
                     transform: scale(0.92) translate(0, 32px);
           }
+          .butn {
+            width: 35%;
+            margin-right: 3%;
+            font-size: 0.9em;
+            transition: all 0.3s ease;
+          }
+          
+          .butn:hover {
+            background: #69B692;
+            border-color: #69B692;
+            cursor: pointer;
+          }
+          
        
     </style>
 </head>
 <body  >
-
-
-
-    <div class="content" style="background-image: url(//static/images/sale.jpeg);" >
     <section>
       <div class="register-wrapper">
       <div class="register-block">
-      <h3 class="register-title">Purchase Now</h3>
-        <p>Please check the correct details to buy your products</p>
+      <h3 class="register-title">Shipping Order Form</h3>
         <form action="" method="POST">
 
           {% comment %} /purchase/{{product.product_id}} {% endcomment %}
@@ -153,7 +157,7 @@
         <label for="fname">Location</label><br>
         <input type="text" name="location" placeholder="Location"/>
 
-              <input class="btn btn-success btn-lg btn-block" type="submit" value="Submit"/>
+              <input class="butn " type="submit" value="Submit"/ style="background: #69B692;">
   
         </form>
       </div>

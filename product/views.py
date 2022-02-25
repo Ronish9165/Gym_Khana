@@ -43,7 +43,7 @@ def showproduct(request):
 #     }
 
 #     return render(request, 'product/product_detail.html', data)
-
+@login_required(login_url='login')
 def purchase(request, p_id):
     print(request)
     if request.method == "POST":
@@ -65,7 +65,7 @@ def book_details(request, p_id):
     purchase = Products.objects.get(product_id=p_id)
     return render(request, 'admin/purchase.html', {'Products': purchase})
 
-
+@login_required(login_url='login')
 def admindashboard_view(request):
     user = get_user_model()
     usercount = user.objects.all().filter(is_superuser=False).count()
@@ -122,7 +122,7 @@ def view_booking(request):
     }
     return render(request,'admin/view_booking.html',data)
 
-    
+@login_required(login_url='login')  
 def edit_product(request,p_id):
 
     try:
@@ -137,6 +137,7 @@ def edit_product(request,p_id):
 
     return redirect("/product/viewproduct")
 
+@login_required(login_url='login')
 def update_product(request,p_id):
 
     product=Products.objects.get(product_id=p_id)
@@ -147,6 +148,7 @@ def update_product(request,p_id):
 
     return redirect ("/product/view-product")
 
+@login_required(login_url='login')
 def delete_product(request, p_id):
     product = Products.objects.get(product_id=p_id)
     product.delete()
