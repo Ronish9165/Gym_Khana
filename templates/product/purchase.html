@@ -135,14 +135,11 @@
       <div class="register-wrapper">
       <div class="register-block">
       <h3 class="register-title">Shipping Order Form</h3>
-        <form action="" method="POST">
-
-          {% comment %} /purchase/{{product.product_id}} {% endcomment %}
-          {% csrf_token %}
-
+      <form action="" method="POST">
+        {% csrf_token %}
         
         <label for="fname">Product Id</label><br>
-        <input type="text" name="product_name" value="{{products.product_id}}" placeholder="Prodct Name"/>
+        <input type="text" name="product_name" value="{{products.product_id}}" placeholder="Product Name"/>
 
         <label for="fname">Your Name</label><br>
         <input type="text" name="your_name" placeholder="Your Name"/>
@@ -153,21 +150,23 @@
         <label for="fname">Date</label><br>
         <input type="date" name="date" placeholder="Date"/>
 
-        <label for="fname">Location</label><br>
-        <input type="text" name="location" placeholder="Location"/>
+        <label for="fname">City</label><br>
+        <input type="text" name="address" placeholder="city"/>
+
+        <label for="fname">Street</label><br>
+        <input type="text" name="location" placeholder="street"/>
+
+    
 
         <input class="butn " type="submit" value="Submit" style="background: #69B692;">
      
-        </form>
+      </form>
       </div>
       </div>
     </section>
   </div>
 
 </form>
-
-
-
 </body>
 </html>
 {% endblock %}

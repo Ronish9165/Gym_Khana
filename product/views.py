@@ -48,6 +48,7 @@ def purchase(request, p_id):
     print(request)
     if request.method == "POST":
         form = BookForm(request.POST)
+        print(request)
         try:
             form.save()
             messages.success(request, "your booking was done")
